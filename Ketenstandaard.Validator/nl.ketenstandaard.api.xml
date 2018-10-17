@@ -80,6 +80,7 @@
             messagetype of the payload 
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "P:nl.ketenstandaard.api.models.ValidationResult.IsValid" -->
         <member name="P:nl.ketenstandaard.api.Validator.ClientID">
             <summary>
             ClientId of the calling application Provided by the Ketenstandaard
@@ -126,17 +127,19 @@
             </summary>
         </member>
         <member name="M:nl.ketenstandaard.api.Validator.ValidateXmlMessage(System.String,System.String,System.String,System.String)">
-            <summary>
-            Validate a XML string against the Ketenstandaard messagestandards
-            </summary>
-            <param name="messageformat">Expected Format to check (e.g. INSBOU)</param>
-            <param name="messageversion">Expected  Version of the Format (e.g. 004)</param>
-            <param name="messagetype">Expected  Version of the Format (e.g. 004)</param>
-            <param name="messagecontent">payload in string format</param>
-            <returns>ValidationResult</returns>
-            <seealso cref="T:nl.ketenstandaard.api.models.ValidationResult">
-            Take a look at the validationResult Class
-            </seealso>
+             <summary>
+             Validate a XML string against the Ketenstandaard messagestandards
+             </summary>
+             <param name="messageformat">Expected Format to check (e.g. INSBOU)</param>
+             <param name="messageversion">Expected  Version of the Format (e.g. 004)</param>
+             <param name="messagetype">Expected  Version of the Format (e.g. 004)</param>
+             <param name="messagecontent">payload in string format</param>
+             
+            
+             <returns>ValidationResult</returns>
+             <seealso cref="T:nl.ketenstandaard.api.models.ValidationResult">
+             Take a look at the validationResult Class
+             </seealso>
         </member>
     </members>
 </doc>
