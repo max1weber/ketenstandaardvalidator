@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InvalidInvoiceXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Invoice xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.gs1.nl/factuur/insbou/004" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gs1.nl/factuur/insbou/004 Factuur_insbou004.xsd"&gt;
+	&lt;InvoiceType&gt;380&lt;/InvoiceType&gt;
+	&lt;InvoiceNumber&gt;FAC101010&lt;/InvoiceNumber&gt;
+	&lt;InvoiceDate&gt;2017-07-20&lt;/InvoiceDate&gt;
+	&lt;DeliveryDate&gt;2017-07-18&lt;/DeliveryDate&gt;
+	&lt;ExpirationDate&gt;2017-08-20&lt;/ExpirationDate&gt;
+	&lt;Currency&gt;EUR&lt;/Currency&gt;
+	&lt;PaymentMethodCode&gt;42&lt;/PaymentMethodCode&gt;
+	&lt;ChainLiabilityIndicator&gt;J&lt;/ChainLiabilityIndicator&gt;
+	&lt;FreeText&gt;Dakreparatie&lt;/FreeText&gt;
+	&lt;BuyersOrderNumber&gt;BON20171100&lt;/BuyersOrderNumber&gt;
+	&lt;ProjectNumber&gt;12353252&lt;/ProjectNumber&gt;
+	&lt;ContractNumber&gt;CN881234&lt;/ContractNumber&gt;
+	&lt;Buyer&gt;
+		&lt;GLN&gt;9999999999999&lt;/GLN&gt;
+		&lt;Name&gt;Woningcorporatie Ketenstandaard&lt;/Name&gt;
+		&lt;StreetAndNumber&gt;Corporatielaan 2&lt;/StreetAndNumber&gt;
+		&lt;City&gt;Zevenaar&lt;/City&gt;
+		&lt;PostalCode&gt;6902 PK&lt;/PostalCode&gt;
+		&lt;Country&gt;NL&lt;/Country&gt;
+		&lt;VATRegistrationNumber&gt;NL000000000B11&lt;/VATRegistrationNumber&gt;
+	&lt;/Buyer&gt;
+	&lt;Supplier&gt;
+		&lt;GLN&gt;0000000000000&lt;/GLN&gt;
+		&lt;Name&gt;Aannemer Ketenstandaard&lt;/Name&gt;
+		&lt;StreetAndNumber&gt;Aannemerweg 200&lt;/StreetAndNumber&gt;
+		&lt;City&gt;Ede&lt;/City&gt;
+		&lt;PostalCode&gt;2233BX&lt;/PostalCode&gt;
+		&lt;Country&gt;NL&lt;/Country&gt;
+		&lt;VATRegistrationNumber&gt;NL987654321B99&lt;/VATRegistrationNumber&gt;
+		&lt;ChamberOfCommerceNumber&gt;87654321&lt;/ChamberOfCommerceNumber&gt;
+		&lt;ContactInformation&gt;
+			&lt;ContactPersonName&gt;Pieter Pietersen&lt;/ContactPersonName&gt;
+			&lt;PhoneNumber&gt;06-11223344&lt;/PhoneNumber&gt;
+		&lt;/ContactInformation&gt;
+		&lt;AccountInformation&gt;
+			&lt;IBAN&gt;NL12BANK0412398300&lt;/IBAN&gt;
+		&lt;/AccountInformation&gt;
+	&lt;/Supplier&gt;
+	&lt;Invoicee&gt;
+		&lt;GLN&gt;8719332111422&lt;/GLN&gt;
+	&lt;/Invoicee&gt;
+	&lt;Invoicer&gt;
+		&lt;GLN&gt;8719332101409&lt;/GLN&gt;
+	&lt;/Invoicer&gt;
+	&lt;DeliveryParty&gt;
+		&lt;StreetAndNumber&gt;Hoofdstraat 95&lt;/StreetAndNumber&gt;
+		&lt;City&gt;Apeldoorn&lt;/City&gt;
+		&lt;PostalCode&gt;7312 LL&lt;/PostalCode&gt;
+		&lt;Country&gt;NL&lt;/Country&gt;
+	&lt;/DeliveryParty&gt;
+	&lt;InvoiceCharge&gt;
+		&lt;ChargeTypeCode&gt;AAT&lt;/ChargeTypeCode&gt;
+		&lt;ChargeAmount&gt;25.00&lt;/ChargeAmount&gt;
+		&lt;ChargeDescription&gt;Spoed&lt;/ChargeDescription&gt;
+		&lt;VATInformation&gt;
+			&lt;VATRate&gt;S&lt;/VATRate&gt;
+			&lt;VATPercentage&gt;21&lt;/VATPercentage&gt;
+		&lt;/VATInformation&gt;
+	&lt;/InvoiceCharge&gt;
+	&lt;InvoiceLine&gt;
+		&lt;LineNumber&gt;1&lt;/LineNumber&gt;
+		&lt;DeliveredQuantity&gt;12&lt;/DeliveredQuantity&gt;
+		&lt;DeliveredQuantityUoM&gt;HUR&lt;/DeliveredQuantityUoM&gt;
+		&lt;NumberOfInvoicingUnits&gt;12&lt;/NumberOfInvoicingUnits&gt;
+		&lt;NetLineAmount&gt;552.00&lt;/NetLineAmount&gt;
+		&lt;TradeItemIdentification&gt;
+			&lt;SuppliersTradeItemId&gt;10000011&lt;/SuppliersTradeItemId&gt;
+			&lt;AdditionalItemIdentification&gt;
+				&lt;FurtherIdentifyingCharacteristics&gt;ABREID&lt;/FurtherIdentifyingCharacteristics&gt;
+			&lt;/AdditionalItemIdentification&gt;
+		&lt;/TradeItemIdentification&gt;
+		&lt;PriceInformation&gt;
+			&lt;Price&gt;46.00&lt;/Price&gt;
+			&lt;PriceBase&gt;
+				&lt;NumberOfUnitsInPriceBasis&gt;1&lt;/NumberOfUnitsInPriceBasis&gt;
+				&lt;PriceBasisUoM&gt;HUR&lt;/PriceBasisUoM&gt;
+			&lt;/PriceBase&gt;
+		&lt;/PriceInformation&gt;
+		&lt;VATInformation&gt;
+			&lt;VATRate&gt;S&lt;/VATRate&gt;
+			&lt;VATPercentage&gt;6&lt;/VATPercentage&gt;
+		&lt;/VATInformation&gt;
+	&lt;/InvoiceLine&gt;
+	&lt;InvoiceLine&gt;
+		&lt;LineNumber&gt;2&lt;/LineNumber&gt;
+		&lt;DeliveredQuantity&gt;4&lt;/DeliveredQuantity&gt;
+		&lt;DeliveredQuantityUoM&gt;PCE&lt;/DeliveredQuantityUoM&gt;
+		&lt;NumberOfInvoicingUnits&gt;16.8&lt;/NumberOfInvoicingUnits&gt;
+		&lt;NetLineAmount&gt;59.64&lt;/NetLineAmount&gt;
+		&lt;TradeItemIdentification&gt;
+			&lt;GTIN&gt;08711438159445&lt;/GTIN&gt;
+			&lt;AdditionalItemIdentification&gt;
+				&lt;TradeItemDescription&gt;Vuren balk 60x150mm lengte 4200mm FSC70&lt;/TradeItemDescription&gt;
+				&lt;FurtherIdentifyingCharacteristics&gt;MATERIAAL&lt;/FurtherIdentifyingCharacteristics&gt;
+			&lt;/AdditionalItemIdentification&gt;
+		&lt;/TradeItemIdentification&gt;
+		&lt;PriceInformation&gt;
+			&lt;Price&gt;3.55&lt;/Price&gt;
+			&lt;PriceBase&gt;
+				&lt;NumberOfUnitsInPriceBasis&gt;1&lt;/NumberOfUnitsInPriceBasis&gt;
+				&lt;PriceBasisUoM&gt;MTR&lt;/PriceBasisUoM&gt;
+			&lt;/PriceBase&gt;
+		&lt;/PriceInformation&gt;
+		&lt;VATInformation&gt;
+			&lt;VATRate&gt;S&lt;/VATRate&gt;
+			&lt;VATPercentage&gt;21&lt;/VATPercentage&gt;
+		&lt;/VATInformation&gt;
+	&lt;/InvoiceLine&gt;	
+	&lt;InvoiceLine&gt;
+		&lt;LineNumber&gt;3&lt;/LineNumber&gt;
+		&lt;DeliveredQuantity&gt;8&lt;/DeliveredQuantity&gt;
+		&lt;DeliveredQuantityUoM&gt;PCE&lt;/DeliveredQuantityUoM&gt;
+		&lt;NumberOfInvoicingUnits&gt;8&lt;/NumberOfInvoicingUnits&gt;
+		&lt;NetLineAmount&gt;37.84&lt;/NetLineAmount&gt;
+		&lt;TradeItemIdentification&gt;
+			&lt;GTIN&gt;05400107577606&lt;/GTIN&gt;
+			&lt;AdditionalItemIdentification&gt;
+				&lt;TradeItemDescription&gt;PUR schuim 500ml&lt;/TradeItemDescription&gt;
+				&lt;FurtherIdentifyingCharacteristics&gt;MATERIAAL&lt;/FurtherIdentifyingCharacteristics&gt;
+			&lt;/AdditionalItemIdentification&gt;
+		&lt;/TradeItemIdentification&gt;
+		&lt;PriceInformation&gt;
+			&lt;Price&gt;4.73&lt;/Price&gt;
+			&lt;PriceBase&gt;
+				&lt;NumberOfUnitsInPriceBasis&gt;1&lt;/NumberOfUnitsInPriceBasis&gt;
+				&lt;PriceBasisUoM&gt;PCE&lt;/PriceBasisUoM&gt;
+			&lt;/PriceBase&gt;
+		&lt;/PriceInformation&gt;
+		&lt;VATInformation&gt;
+			&lt;VATRate&gt;S&lt;/VATRate&gt;
+			&lt;VATPercentage&gt;21&lt;/VATPercentage&gt;
+		&lt;/VATInformation&gt;
+	&lt;/InvoiceLine&gt;
+	&lt;PaymentOnBlockedAccount&gt;
+		&lt;Amount&gt;192.95&lt;/Amount&gt;
+	&lt;/PaymentOnBlockedAccount&gt;
+	&lt;InvoiceTotals&gt;
+		&lt;TotalInvoiceAmount&gt;704.46&lt;/TotalInvoiceAmount&gt;
+		&lt;TotalNetLineAmount&gt;649.48&lt;/TotalNetLineAmount&gt;
+		&lt;TotalAmountInvoiceChargeAllowance&gt;25.00&lt;/TotalAmountInvoiceChargeAllowance&gt;
+		&lt;TotalVATAmount&gt;65.14&lt;/TotalVATAmount&gt;
+	&lt;/InvoiceTotals&gt;
+	&lt;VATSubTotal&gt;
+		&lt;VATAmount&gt;33.12&lt;/VATAmount&gt;
+		&lt;VATInformation&gt;
+			&lt;VATRate&gt;S&lt;/VATRate&gt;
+			&lt;VATPercentage&gt;6&lt;/VATPercentage&gt;
+			&lt;VATBaseAmount&gt;552.00&lt;/VATBaseAmount&gt;
+		&lt;/VATInformation&gt;
+	&lt;/VATSubTotal&gt;
+	&lt;VATSubTotal&gt;
+		&lt;VATAmount&gt;32.02&lt;/VATAmount&gt;
+		&lt;VATInformation&gt;
+			&lt;VATRate&gt;S&lt;/VATRate&gt;
+			&lt;VATPercentage&gt;21&lt;/VATPercentage&gt;
+			&lt;VATBaseAmount&gt;152.46&lt;/VATBaseAmount&gt;
+		&lt;/VATInformation&gt;
+	&lt;/VATSubTotal&gt;
+&lt;/Invoice&gt;</value>
+  </data>
+</root>

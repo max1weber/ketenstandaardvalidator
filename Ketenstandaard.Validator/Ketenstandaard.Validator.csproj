@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>nl.ketenstandaard.api</AssemblyName>
+    <RootNamespace>nl.ketenstandaard.api</RootNamespace>
+    <PackageId>nl.ketenstandaard.api_validator</PackageId>
+    <Authors>M.Weber</Authors>
+    <Company>Ketenstandaard.nl</Company>
+    <Product>nl.ketenstandaard.api validator</Product>
+    <Description>A SDK to validate against the Validator API of the Ketenstandaard</Description>
+    <PackageProjectUrl>https://api.ketenstandaard.nl/swagger/index.html</PackageProjectUrl>
+    <PackageReleaseNotes>This is the .NET SDK for the Ketenstandaard Validator.
+
+You will need to obtain some keys:
+
+- ClientId; Identifier for your application
+- ClientSecret;  Secret key for your application
+- Username; usernamefor the user/serviceaccount of the application
+- Password; password of the user / serviceaccount of the application
+
+you can obtain this by visit www.ketenstandaard.nl and make a phonecall
+</PackageReleaseNotes>
+    <Copyright>Ketenstandaard 2018</Copyright>
+    <PackageLicenseUrl>www.ketenstandaard.nl</PackageLicenseUrl>
+    <PackageTags>Ketenstandaard, Insbou, Validator</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>marcweber.pfx</AssemblyOriginatorKeyFile>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\mwr6\source\repos\KetenstandaardModule\Ketenstandaard.Validator\nl.ketenstandaard.api.xml</DocumentationFile>
+    <BaseAddress>285212673</BaseAddress>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="106.5.2" />
+  </ItemGroup>
+
+</Project>
