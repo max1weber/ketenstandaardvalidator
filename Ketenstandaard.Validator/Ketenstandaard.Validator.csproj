@@ -23,12 +23,14 @@ you can obtain this by visit www.ketenstandaard.nl and make a phonecall
 </PackageReleaseNotes>
     <Copyright>Ketenstandaard 2018</Copyright>
     <PackageLicenseUrl>www.ketenstandaard.nl</PackageLicenseUrl>
-    <PackageTags>Ketenstandaard, Insbou, Validator</PackageTags>
+    <PackageTags>Ketenstandaard, Insbou, Validator, Sales</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>marcweber.pfx</AssemblyOriginatorKeyFile>
     <Version>1.0.1</Version>
+    <RepositoryUrl>https://github.com/max1weber/ketenstandaardvalidator</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
