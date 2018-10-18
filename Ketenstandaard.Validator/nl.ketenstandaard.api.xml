@@ -4,6 +4,11 @@
         <name>nl.ketenstandaard.api</name>
     </assembly>
     <members>
+        <member name="T:nl.ketenstandaard.api.Environment">
+            <summary>
+            Enum for the Target environment
+            </summary>
+        </member>
         <member name="P:nl.ketenstandaard.api.models.Message.businessRule">
             <summary>
             The businessrule violated of warned
@@ -32,6 +37,16 @@
         <member name="P:nl.ketenstandaard.api.models.Message.severity">
             <summary>
             Severitiy of the Error/Warning
+            </summary>
+        </member>
+        <member name="T:nl.ketenstandaard.api.models.ValidationResult">
+            <summary>
+            Result of the XML Validation
+            </summary>
+        </member>
+        <member name="M:nl.ketenstandaard.api.models.ValidationResult.#ctor">
+            <summary>
+            .ctor of the ValidationResult class
             </summary>
         </member>
         <member name="P:nl.ketenstandaard.api.models.ValidationResult.documentType">
@@ -121,10 +136,17 @@
             <param name="clientSecret">ClientSecret of the application provided by Ketenstandaard</param>
             <param name="targetEnvironment">Target Environment of the API (Default: Development) </param>
         </member>
+        <member name="M:nl.ketenstandaard.api.Validator.AuthenticateAsync">
+            <summary>
+            Async Methode to Authenticate the client to the server
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:nl.ketenstandaard.api.Validator.Authenticate">
             <summary>
             The Client will be Authenticated against the TargetEnvironment of the API.
             </summary>
+            
         </member>
         <member name="M:nl.ketenstandaard.api.Validator.ValidateXmlMessage(System.String,System.String,System.String,System.String)">
              <summary>
@@ -140,6 +162,16 @@
              <seealso cref="T:nl.ketenstandaard.api.models.ValidationResult">
              Take a look at the validationResult Class
              </seealso>
+        </member>
+        <member name="M:nl.ketenstandaard.api.Validator.ValidateXmlMessageAsync(System.String,System.String,System.String,System.String)">
+            <summary>
+            ValidateXmlMessageAsync Async methode to validate a Ketenstandaard Message
+            </summary>
+            <param name="messageformat">Expected Message Format</param>
+            <param name="messageversion">Expected Message Version</param>
+            <param name="messagetype">Expected Message Type</param>
+            <param name="messagecontent">Xl Payload in plain text a.k.a. string</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

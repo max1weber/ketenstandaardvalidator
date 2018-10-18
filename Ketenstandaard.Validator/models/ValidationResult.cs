@@ -3,9 +3,14 @@ using System.Collections.Generic;
 
 namespace nl.ketenstandaard.api.models
 {
+    /// <summary>
+    /// Result of the XML Validation
+    /// </summary>
     public class  ValidationResult
     {
-
+        /// <summary>
+        /// .ctor of the ValidationResult class
+        /// </summary>
         public ValidationResult()
         {
             messages = new List<Message>();

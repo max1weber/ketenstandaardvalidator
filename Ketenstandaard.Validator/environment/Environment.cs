@@ -4,6 +4,10 @@ using System.Text;
 
 namespace nl.ketenstandaard.api
 {
+
+    /// <summary>
+    /// Enum for the Target environment
+    /// </summary>
     public enum Environment
     {
 

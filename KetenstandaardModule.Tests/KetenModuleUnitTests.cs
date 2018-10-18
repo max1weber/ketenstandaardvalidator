@@ -28,6 +28,16 @@ namespace KetenstandaardModule.Tests
 
         }
 
+        [TestMethod]
+        public async System.Threading.Tasks.Task AuthenticateAsync()
+        {
+
+           await  validator.AuthenticateAsync();
+
+            Assert.IsTrue(validator.IsAuthenticated);
+
+        }
+
 
         [TestMethod]
         public void CheckInvalidXml()
@@ -48,6 +58,30 @@ namespace KetenstandaardModule.Tests
             Assert.AreEqual(1, result.totalWarningsFound);
 
           
+
+        }
+
+
+
+        [TestMethod]
+        public async System.Threading.Tasks.Task CheckInvalidXmlAsync()
+        {
+
+
+            // validator.Authenticate();
+
+            //Assert.IsTrue(validator.IsAuthenticated);
+
+
+            var xmlcontent = Resource.InvalidInvoiceXml.ToString();
+            bool finalresult = false;
+            var result = await validator.ValidateXmlMessageAsync("SALES", "004", "invoic", xmlcontent);
+            finalresult = result.IsValid;
+
+            Assert.AreEqual(6, result.totalErrorsFound);
+            Assert.AreEqual(1, result.totalWarningsFound);
+
+
 
         }
     }

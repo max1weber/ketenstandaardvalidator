@@ -8,7 +8,9 @@
     <Authors>M.Weber</Authors>
     <Company>Ketenstandaard.nl</Company>
     <Product>nl.ketenstandaard.api validator</Product>
-    <Description>A SDK to validate against the Validator API of the Ketenstandaard</Description>
+    <Description>A SDK to validate against the Validator API of the Ketenstandaard
+
+Including Async methods</Description>
     <PackageProjectUrl>https://api.ketenstandaard.nl/swagger/index.html</PackageProjectUrl>
     <PackageReleaseNotes>This is the .NET SDK for the Ketenstandaard Validator.
 
@@ -28,9 +30,10 @@ you can obtain this by visit www.ketenstandaard.nl and make a phonecall
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>marcweber.pfx</AssemblyOriginatorKeyFile>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <RepositoryUrl>https://github.com/max1weber/ketenstandaardvalidator</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

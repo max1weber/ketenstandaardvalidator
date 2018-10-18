@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace nl.ketenstandaard.api
@@ -94,10 +95,10 @@ namespace nl.ketenstandaard.api
 
 
         /// <summary>
-        /// The Client will be Authenticated against the TargetEnvironment of the API.
+        /// Async Methode to Authenticate the client to the server
         /// </summary>
-
-        public void Authenticate()
+        /// <returns></returns>
+        public async   Task AuthenticateAsync()
         {
 
 
@@ -105,16 +106,35 @@ namespace nl.ketenstandaard.api
 
             //create RestSharp client and POST request object
             client.BaseUrl = new Uri(authEndpoint);
-            var request = new RestRequest(Method.POST);
+            RestRequest request = CreateAuthenticationRequest();
 
-            //add GetToken() API method parameters
-            request.Parameters.Clear();
-            request.AddParameter("grant_type", "password");
-            request.AddParameter("username", Username);
-            request.AddParameter("password", Password);
-            request.AddParameter("client_id", ClientID);
-            request.AddParameter("client_secret", ClientSecret);
-            request.AddParameter("scope", "Api");
+            CancellationToken cancellationToken = new CancellationToken();
+            //make the API request and get the response
+            IRestResponse response = await client.ExecutePostTaskAsync(request, cancellationToken);
+
+            //return an AccessToken
+            AccessToken = SimpleJson.SimpleJson.DeserializeObject<AccessToken>(response.Content);
+
+            IsAuthenticated = true;
+
+            ExpirationDateTime = DateTime.Now.AddSeconds(AccessToken.expires_in);
+        }
+
+      
+
+        /// <summary>
+        /// The Client will be Authenticated against the TargetEnvironment of the API.
+        /// </summary>
+        /// 
+        public   void Authenticate()
+        {
+
+
+
+
+            //create RestSharp client and POST request object
+            client.BaseUrl = new Uri(authEndpoint);
+            var request = CreateAuthenticationRequest();
 
             //make the API request and get the response
             IRestResponse response = client.Execute(request);
@@ -152,12 +172,67 @@ namespace nl.ketenstandaard.api
 
             //create RestSharp client and POST request object
             client.BaseUrl = new Uri(serviceEndpoint);
+            var request = CreateValidationRequest(messagecontent);
+
+            //make the API request and get the response
+            IRestResponse response = client.Execute(request);
+            ValidationResult result = CreateValidationResult(messageformat, messageversion, messagetype, response);
+            request = null;
+            client.Authenticator = null;
+            return result;
+        }
+
+        private static ValidationResult CreateValidationResult(string messageformat, string messageversion, string messagetype, IRestResponse response)
+        {
+            ValidationResult result = SimpleJson.SimpleJson.DeserializeObject<ValidationResult>(response.Content);
+
+            result.ExpectedFormat = messageformat;
+            result.ExpectedType = messagetype;
+            result.ExpectedVersion = messageversion;
+            Trace.WriteLine("Validation Result " + result.IsValid);
+            return result;
+        }
+
+        /// <summary>
+        /// ValidateXmlMessageAsync Async methode to validate a Ketenstandaard Message
+        /// </summary>
+        /// <param name="messageformat">Expected Message Format</param>
+        /// <param name="messageversion">Expected Message Version</param>
+        /// <param name="messagetype">Expected Message Type</param>
+        /// <param name="messagecontent">Xl Payload in plain text a.k.a. string</param>
+        /// <returns></returns>
+        public async Task<ValidationResult> ValidateXmlMessageAsync(string messageformat, string messageversion, string messagetype, string messagecontent)
+        {
+
+            if (!IsAuthenticated)
+            {
+                await AuthenticateAsync();
+            }
+
+
+
+            //create RestSharp client and POST request object
+            client.BaseUrl = new Uri(serviceEndpoint);
+            RestRequest request = CreateValidationRequest(messagecontent);
+            CancellationToken cancellationToken = new CancellationToken();
+            //make the API request and get the response
+            IRestResponse response = await client.ExecutePostTaskAsync(request, cancellationToken);
+
+
+            ValidationResult result = CreateValidationResult(messageformat, messageversion, messagetype, response);
+            request = null;
+            client.Authenticator = null;
+            return result;
+        }
+
+        private RestRequest CreateValidationRequest(string messagecontent)
+        {
             var request = new RestRequest(Method.POST);
             client.Authenticator = new JwtAuthenticator(AccessToken.access_token);
 
             //clear paramaters
             request.Parameters.Clear();
-            
+
 
             request.AddHeader("Content-Type", "text/plain");
             request.AddHeader("Accept", "application/json");
@@ -169,19 +244,22 @@ namespace nl.ketenstandaard.api
                 Type = ParameterType.RequestBody,
                 Value = messagecontent
             });
+            return request;
+        }
 
-            //make the API request and get the response
-            IRestResponse response = client.Execute(request);
+        private RestRequest CreateAuthenticationRequest()
+        {
+            var request = new RestRequest(Method.POST);
 
-            ValidationResult result = SimpleJson.SimpleJson.DeserializeObject<ValidationResult>(response.Content);
-
-            result.ExpectedFormat = messageformat;
-            result.ExpectedType = messagetype;
-            result.ExpectedVersion = messageversion;
-            Trace.WriteLine("Validation Result " + result.IsValid);
-            request = null;
-            client.Authenticator = null;
-            return result;
+            //add GetToken() API method parameters
+            request.Parameters.Clear();
+            request.AddParameter("grant_type", "password");
+            request.AddParameter("username", Username);
+            request.AddParameter("password", Password);
+            request.AddParameter("client_id", ClientID);
+            request.AddParameter("client_secret", ClientSecret);
+            request.AddParameter("scope", "Api");
+            return request;
         }
 
     }
